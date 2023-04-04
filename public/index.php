@@ -17,8 +17,6 @@
     <div class="nav container">
     <!--Logo-->
     <a href="#" class="logo">Ve<span>nom</span></a>
-    <!--Login Btn-->
-    <a href="admin.php" class="login">Login</a>
     </div>
 </header>
 <!-- Home -->
