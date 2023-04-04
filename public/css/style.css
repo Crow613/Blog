@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100;1,200;1,300&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0;
+    padding:0;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    box-sizing:border-box;
+}
+
+/*Variobles*/
+:root {
+    --container-color: #1a1e21;
+    --second-color:#fd8f44;
+    --text-color:#172317;
+    --bg-color:#fff;
+}
+::selection {
+
+    color:var(--bg-color) ;
+    background: var(--container-color);
+}
+
+a {
+    list-style: none;
+}
+li{
+    list-style: none;
+}
+img{
+    width:100%;
+}
+section{
+    padding:3rem 0 2rem;
+}
+.container {
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+}
+header.shadow{
+    background: var(--bg-color);
+    box-shadow: 0 1px 4px hsl(0 4% 14% / 10%);
+    transition: 0.4s;
+}
+header.shadow .logo {
+    color: var(--text-color);
+}
+
+.nav{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px;
+}
+.logo{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+.logo span{
+    color: var(--second-color);
+}
+
+.login{
+    padding: 8px 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 4px;
+    background: var(--second-color);
+    color:var(--bg-color);
+}
+.login :hover{
+    background: hsl(24, 98%, 58%);
+    transition: 0.3s;
+}
+.home {
+    width: 100%;
+    min-height: 440px;
+    background: var(--container-color);
+    display:grid;
+    justify-content: center;
+    align-items:center;
+}
+.home-text{
+    color:var(--bg-color);
+    text-align: center;
+}
+.home-title {
+    font-size: 1rem;
+
+}
+.home-subtitle {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Post Filter */
+.post-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap:1.5rem;
+    margin-top: 2rem !important;
+}
+.filter-item {
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.active-filter{
+    background: var(--second-color);
+    color: var(--bg-color);
+    padding: 4px 10px;
+    border-radius:4px;
+}
+/* Post */
+.post {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,auto));
+    gap: 1.5rem;
+}
+.post-box {
+    background: var(--bg-color);
+    box-shadow: 0 4px 14px hsl(355deg 25% 15% / 10%);
+    padding:15px;
+    border-radius:0.5rem;
+}
+.post-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.5rem;
+}
+
+.cotegory {
+    font-size:0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--second-color);
+}
+
+.post-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-color);
+    /* To Remain Title In 2 Lines*/
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post-date {
+    display: flex;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-top: 4px;
+
+}
+.post-decription {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    margin: 5px 0 10px;
+    /* To Remain Title In 3 Lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+ 
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 2px solid var(--second-color);
+}
+.profile-name {
+    font-size: 0.82rem;
+    font-weight: 500;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+
+}
+
+.footer p{
+    font-size: 0.938rem;
+}
+.social {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+.social .bx{
+    font-size: 1.4rem;
+    color:var(--text-color);
+}
+.social .bx :hover{
+    color: var(--second-color);
+    transition: 0.3s all linear;
+}
