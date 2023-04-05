@@ -33,7 +33,7 @@ h2{
     text-align: center;
 
 }
-.imputbox{
+.inputbox{
     position: relative;
     margin: 30px 0;
     width: 310px;
@@ -68,7 +68,7 @@ input:valid ~ label{
     color: #fff;
 
 }
-.imputbox ion-icon{
+.inputbox ion-icon{
     position: absolute;
     right: 8px;
     color: #fff;
