@@ -48,7 +48,6 @@ $admin->login();
                         <label for=""><input type="checkbox">Remember Me <a href="#">Forget Password</a></label>
                     </div>
                     <button>Log-In</button>
-                    <p>Don`t have a account <a href="#">Register</a></p>
                 </form>
             </div>
         </div>
