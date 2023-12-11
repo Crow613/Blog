@@ -1,14 +1,3 @@
-<?php
-
-require_once  "../vendor/autoload.php";
-
-use \App\Admin;
-
-$admin = new  Admin();
-
-$admin->login();
-?> 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,46 +14,39 @@ $admin->login();
     <!--Nav-->
     <div class="nav container">
     <!--Logo-->
-    <a href="#" class="logo">Ve<span>nom</span></a>
+    <a href="/" class="logo">Ve<span>nom</span></a>
     </div>
 </header>
     <!--Admin Login-->
     <section>
         <div class="form-box">
             <div class="form-value">
-                <form action="">
+                <form action="login" method="post">
                     <h2>Login</h2>
                     <div class="inputbox">
+                    <ion-icon name="name-outline"></ion-icon>
+                        <input name="name" type="name" required>
+                        <label for="name">name</label>
+                    </div>
+                    <div class="inputbox">
                     <ion-icon name="mail-outline"></ion-icon>
-                        <input type="email" required>
-                        <label for="">Email</label>
+                        <input name="email" type="email" required>
+                        <label for="email">Email</label>
                     </div>
                     <div class="inputbox">
                     <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" required>
-                        <label for="">Password</label>
+                        <input name="password" type="password" required>
+                        <label for="passwords">Password</label>
                     </div>
                     <div class="forget">
                         <label for=""><input type="checkbox">Remember Me <a href="#">Forget Password</a></label>
                     </div>
-                    <button>Log-In</button>
+                    <button type="submit">Log-In</button>
                 </form>
             </div>
         </div>
     </section>
 
-
-
-
-
-
-
-
-
-
-<!-- script -->
-
-<!--script ionicons-->
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

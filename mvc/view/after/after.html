@@ -1,7 +1,3 @@
-<?php 
-require_once  "../vendor/autoload.php";
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,10 +9,8 @@ require_once  "../vendor/autoload.php";
 <!--css link-->
 <link rel="stylesheet" href="css/admin.css">
     <!--boxicon css-->
-  
 </head>
 <body>
-
 
 <!--SIDEBAR-->
     <section id="sidebar">
@@ -90,12 +84,18 @@ require_once  "../vendor/autoload.php";
        <box-icon type='solid' name='bell'></box-icon>
        <span class="num">8</span>
     </a>
-    <a href="#" class="profile">
-        <img src="" alt="">
-    </a>
+    <div class="container">
+      <img id="profileImage" src="default-profile.jpg" alt="Profile Image">
+      <br>
+      <label for="fileInput">Choose a Profile Picture</label>
+      <input type="file" id="fileInput" accept="image/*" onchange="loadImage()">
+  </div>
     </nav>
-    <!--NAVBAR-->
+
 </section>
+
+
+
 <!--CONTENT-->
 
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>

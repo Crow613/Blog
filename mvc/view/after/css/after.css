@@ -33,12 +33,6 @@ background: var(--grey);
 
 
 
-
-
-
-
-
-
 /*SIDEBAR*/
 #sidebar {
 position: fixed;
@@ -85,8 +79,8 @@ overflow-x: hidden;
 #sidebar .side-menu li.active {
     background: var(--grey);
     position: relative;
-    
-    
+
+
 }
 
 #sidebar .side-menu li.active::before {
@@ -155,7 +149,7 @@ overflow-x: hidden;
     width: calc(100% - 280px);
     left: 280px;
     transition: .3s ease;
-    
+
 }
 #sidebar.hide ~ #content {
     width: calc(100% - 60px);
@@ -293,4 +287,4 @@ overflow-x: hidden;
     color: var(--light);
     background: var(--blue);
    }
-}    
+}
