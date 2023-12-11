@@ -31,8 +31,8 @@ class Router
         switch ($method) {
 
           case 'GET':
-           return $controllerConf->getMethods($file);
 
+           return $controllerConf->getMethods($file);
 
           break;
 
@@ -55,8 +55,11 @@ class Router
           break;
 
           default:
+
             return error;
+
           break;
+          
           }
 
         }else {

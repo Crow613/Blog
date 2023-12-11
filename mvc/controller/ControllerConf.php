@@ -47,16 +47,27 @@ class ControllerConf
 
   public function postMethods()
   {
-
+     //die('1');
    $after = glob(dirname(__DIR__).'/view/after'. '/*');
    $admin = glob(dirname(__DIR__).'/view/admin'. '/*');
    $model = new Model();
-   $method = $model->table($_POST['name']);
 
+   if($_POST['search']){
 
+       if(method_exists($model, 'search')){
+
+        return $model->search();
+
+       }
+
+     }
+
+     $method = $model->table($_POST['name']);
 
    if($method === 'after'){
+
       $afterMethod = $method;
+
      if(method_exists($model, $afterMethod)){
 
       return $model->$method($after);
@@ -64,12 +75,15 @@ class ControllerConf
     }
 
   }elseif($method === 'admin'){
+
        $adminMethod = $method;
+
       if(method_exists($model, $method)){
 
        return $model->$method($admin);
 
       }
+
     }
 
   }
@@ -78,7 +92,6 @@ class ControllerConf
   {
     // code...
   }
-
 
   public function deleteMethods()
   {

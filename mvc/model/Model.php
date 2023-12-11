@@ -10,29 +10,32 @@ use PDO;
 class Model
 {
 
-   public function table(string $params)
+   public function table($params)
    {
 
-     $connect = new Connection;
-     $query = "SELECT `name` FROM `after`";
-     $stmt = $connect->pdo->query($query);
-     $after = $stmt->fetch(PDO::FETCH_ASSOC);
+      $connect = new Connection;
+      $query = "SELECT `name` FROM `after`";
+      $stmt = $connect->pdo->query($query);
+      $after = $stmt->fetch(PDO::FETCH_ASSOC);
 
       $query1 = "SELECT `name` FROM `admin`";
       $stmt1 = $connect->pdo->query($query1);
-           $admin = $stmt1->fetch(PDO::FETCH_ASSOC);
-           $after = strtolower($after['name']);
-           $admin = strtolower($admin['name']);
+      $admin = $stmt1->fetch(PDO::FETCH_ASSOC);
 
-           if($params === $after){
+             $afterStr  = strtolower($after['name']);
+             $adminStr = strtolower($admin['name']);
 
-              return $after;
+           if($params === $afterStr){
 
-            }elseif($params === $admin){
+              return $afterStr;
 
-              return $admin;
+
+            }elseif($params === $adminStr){
+
+              return $adminStr;
 
             }
+
     }
 
    public function after($path)
@@ -48,6 +51,23 @@ class Model
 
       $cantroller = new Controller;
       $cantroller->postMethod($path[0]);
+
+   }
+
+   public function search()
+   {
+     
+     $connect = new Connection;
+     $name = $_POST['search'];
+     $query = "SELECT `name` FROM `search`";
+     $stmt = $connect->pdo->query($query);
+
+     $search = $stmt->fetch(PDO::FETCH_ASSOC);
+
+     if($name === $search['name']){
+
+          die("voronman ardyunq  :{$search['name']}");
+     }
 
    }
 
@@ -82,6 +102,7 @@ class Model
               }else{
 
                   die('Error: password complet');
+
               }
 
          }else{
@@ -122,22 +143,27 @@ class Model
                        die('0');
 
                       }
+
                        if ($pass == $exses['password']) {
 
                      die('1');
 
                      }else{
 
-                              $query = "INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES (NULL, '$name', '$email', '$pass')";
-                              $stmt = $connect->pdo->prepare($query);
-                              $stmt->execute();
-                              $controller = new Controller;
-                              return  $controller->postMethod($path);
+                          $query = "INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES (NULL, '$name','$email', '$pass')";
+                          $stmt = $connect->pdo->prepare($query);
+                          $stmt->execute();
+                          $controller = new Controller;
+                          return  $controller->postMethod($path);
 
                      }
+
                    }
+
                  }
+
                }
+
              }
 
               $conection->pdo = die;

@@ -12,6 +12,7 @@ public $pdo;
 
   public function __construct()
  {
+   
    $host = 'db';
    $dbname = 'test';
    $user = 'root';
