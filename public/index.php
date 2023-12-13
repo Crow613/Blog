@@ -1,9 +1,10 @@
 <?php
 
 require_once  "../vendor/autoload.php";
+require dirname(__DIR__).'/core/conf/conf.php';
+use Core\Request;
+use Core\Router;
 
-use Mvc\core\Request;
-use Mvc\core\Router;
-
+$file ='../view/';
 $request = new Request;
-$router = new Router($request);
+$router = new Router($request,$file);
